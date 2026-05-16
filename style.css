@@ -160,11 +160,11 @@ img {
 
 .section-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 8vw, 3.5rem); /* Responsive font size */
   font-weight: 900;
   letter-spacing: -0.05em;
   line-height: 1;
-  text-transform: none; /* Reverting uppercase from Unbounded trial */
+  text-transform: none;
 }
 
 .section-header h2 em {
@@ -182,6 +182,12 @@ img {
 /* ===================================================
    HERO SECTION
    =================================================== */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -600,7 +606,7 @@ img {
 
 /* ── Batik SVG pattern via data URI ── */
 .journey {
-  padding: 120px 0;
+  padding: 80px 0; /* Reduced from 120px */
   position: relative;
   overflow: hidden;
   color: #111;
@@ -790,6 +796,7 @@ img {
     padding-right: 20px;
     left: 0 !important;
     text-align: left !important;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
   }
 
   .timeline-item.left .timeline-content,
@@ -1115,6 +1122,11 @@ img {
 @media (max-width: 600px) {
   .skills-donut-side {
     flex-direction: column;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 20px;
   }
 
   .sk-card {
@@ -2043,22 +2055,44 @@ img {
 
 @media (max-width: 768px) {
   .hero-nav {
-    padding: 20px 24px;
-    flex-wrap: wrap;
-    gap: 12px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 0 15px;
+    justify-content: space-between;
+    gap: 10px;
   }
 
   .nav-links {
-    order: 3;
-    width: 100%;
-    justify-content: center;
+    display: none;
+  }
+
+  .nav-badge {
+    font-size: 0.65rem;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  .btn-cv {
+    font-size: 0.65rem;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 110px 0 60px; /* Push down just enough to clear the nav */
+    justify-content: flex-start;
   }
 
   .hero-content {
     flex-direction: column-reverse;
-    padding: 32px 24px 60px;
+    padding: 0 24px;
+    margin-top: 0;
     text-align: center;
-    gap: 32px;
+    gap: 20px;
+    width: 100%;
   }
 
   .hero-meta {
@@ -2068,7 +2102,9 @@ img {
 /* Portrait code removed */
 
   .container {
-    padding: 0 20px;
+    padding: 0 16px;
+    width: 100%;
+    overflow-x: hidden; /* Prevent container overflow */
   }
 
   .about {
@@ -2098,7 +2134,11 @@ img {
 
   @media (max-width: 480px) {
     .hero-name {
-      font-size: 3rem;
+      font-size: clamp(2rem, 12vw, 3rem);
+      line-height: 1.1;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
 /* Old portfolio grid logic removed */
