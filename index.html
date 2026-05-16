@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--COPYRIGHT AZZAM KHALIFATULHAQ 2026-->
+
+
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio – azzam Khalifatulhaq </title>
+  <title>Portofolio – AZZAM KHALIFATULHAQ</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Lenis Smooth Scroll CDN -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -27,7 +31,7 @@
         <a href="#journey" class="nav-link">Experience</a>
         <a href="#skills" class="nav-link">Skills</a>
         <a href="#portfolio" class="nav-link">Portfolio</a>
-        <a href="#contact" class="nav-link">Links</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
       <a href="#contact" class="btn-cv">Download CV ↗</a>
     </nav>
@@ -66,8 +70,8 @@
           </p>
           <p>SMP jadi era serius — fokus ngebangun taste dan sense of design. Lanjut SMA,
             iseng nyentuh dunia coding... dan ternyata nggak bisa berhenti.
-            Now? I'm that guy yang bisa bikin brand identity yang kuat sekaligus build AI
-            tools buat mendukung proses kreatifnya.
+            Now? I'm that guy yang bisa bikin brand identity yang kuat sekaligus build tools kreatif buat mendukung
+            proses desainnya.
           </p>
           <p>
             Currently chasing S1 DKV — because design bukan cuma soal estetika,
@@ -244,10 +248,10 @@
             </div>
           </div>
 
-          <div class="sk-card" data-pct="75" data-label="AI" data-color="#ff6a00">
+          <div class="sk-card" data-pct="75" data-label="Illustrator" data-color="#ff6a00">
             <div class="sk-badge sk-ai">Ai</div>
             <div class="sk-info">
-              <span class="sk-name">AI</span>
+              <span class="sk-name">Illustrator</span>
               <span class="sk-role">Vector · Logo · Branding</span>
             </div>
             <div class="sk-bar-wrap">
@@ -256,14 +260,14 @@
             </div>
           </div>
 
-          <div class="sk-card" data-pct="47" data-label="Antigravity" data-color="#c1f17a">
-            <div class="sk-badge sk-av">Av</div>
+          <div class="sk-card" data-pct="47" data-label="After Effects" data-color="#cf96fd">
+            <div class="sk-badge sk-ae">Ae</div>
             <div class="sk-info">
-              <span class="sk-name">Antigravity</span>
+              <span class="sk-name">After Effects</span>
               <span class="sk-role">3D · Motion · Visual FX</span>
             </div>
             <div class="sk-bar-wrap">
-              <div class="sk-bar" style="--pct: 47%; --bar-color: #c1f17a;"></div>
+              <div class="sk-bar" style="--pct: 47%; --bar-color: #cf96fd;"></div>
               <span class="sk-pct-text">47%</span>
             </div>
           </div>
@@ -447,11 +451,88 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header">
-        <h2>Contact</h2>
+        <h2>Get in <em>Touch</em></h2>
+        <p class="section-sub">Got a question? Send me a message, and I'll get back to you soon.</p>
       </div>
+
       <div class="contact-layout">
 
+        <!-- Left: Contact Form (Chat Box) -->
+        <div class="contact-right">
+          <div class="contact-form-card">
+            <div class="form-card-header">
+              <span class="form-card-dot"></span>
+              <span class="form-card-dot"></span>
+              <span class="form-card-dot"></span>
+              <span class="form-card-label">Send Message</span>
+            </div>
+
+            <!-- ✅ Ganti YOUR_FORM_ID dengan ID dari formspree.io/new -->
+            <form id="contactForm" action="https://formspree.io/f/xbdwzanb" method="POST" novalidate>
+              <div class="form-group">
+                <label for="contactName">Your Name <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <span class="input-icon">◈</span>
+                  <input type="text" id="contactName" name="name" placeholder="AZZAM KHALIFATULHAQ" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail">Your Email <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <span class="input-icon">✉</span>
+                  <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject">Subject</label>
+                <div class="input-wrap">
+                  <span class="input-icon">◐</span>
+                  <input type="text" id="contactSubject" name="subject" placeholder="Project Collaboration" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Message <span class="req">*</span></label>
+                <div class="input-wrap textarea-wrap">
+                  <textarea id="contactMessage" name="message" rows="5"
+                    placeholder="Hi Azzam, I'd like to talk about..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn-send" id="btnSend">
+                <span class="btn-send-text">✦ Send Message</span>
+                <span class="btn-send-loader" style="display:none;">Sending...</span>
+              </button>
+            </form>
+
+            <!-- Success / Error Toast -->
+            <div class="form-toast success" id="toastSuccess">
+              <span>🎉</span>
+              <div>
+                <strong>Message sent!</strong>
+                <p>Thanks, I'll get back to you soon.</p>
+              </div>
+            </div>
+            <div class="form-toast error" id="toastError">
+              <span>⚠</span>
+              <div>
+                <strong>Oops! Something went wrong.</strong>
+                <p>Please try again or email directly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact Info + Social -->
         <div class="contact-left">
+          <div class="contact-info-block">
+            <h3 class="contact-info-title">Let's Work Together</h3>
+            <p class="contact-info-desc">Open for freelance projects, collaborations, and creative opportunities. Don't
+              hesitate to reach out!</p>
+          </div>
+
           <div class="contact-card email-card">
             <span class="cc-icon">✉</span>
             <div>
@@ -466,41 +547,33 @@
               <span class="cc-label">Instagram</span>
               <a href="https://instagram.com/zamzulhaq" class="cc-value">@zamzulhaq</a>
               <div class="ig-stats">
-                <button class="btn-follow">Follow</button>
-                <span class="ig-count">5k</span>
+                <button class="btn-follow"
+                  onclick="window.open('https://instagram.com/zamzulhaq','_blank')">Follow</button>
+                <span class="ig-count">5k+</span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Right: Social links -->
-        <div class="contact-right">
-          <div class="social-card linkedin">
-            <span class="sc-icon">in</span>
-            <div>
-              <strong>Azzam Khalifatulhaq</strong>
-              <a href="https://linkedin.com/in/azzam-khalifatulhaq"
-                class="cc-value"><span>linkedin.com/in/azzam-Khalifatulhaq</span></a>
-            </div>
-          </div>
-
-          <div class="social-card twitter">
-            <span class="sc-icon sc-x">✕</span>
-            <div>
-              <strong>@khalifatul</strong>
-              <span>Twitter / X</span>
-            </div>
+          <div class="social-links-row">
+            <a href="https://linkedin.com/in/azzam-khalifatulhaq" target="_blank" class="social-pill">
+              <span class="sp-icon">in</span>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://twitter.com/khalifatul" target="_blank" class="social-pill">
+              <span class="sp-icon">✕</span>
+              <span>Twitter</span>
+            </a>
           </div>
         </div>
+
       </div>
-    </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Azzam Khalifatulhaq. All rights reserved.</p>
+      <p>© 2026 Azzam khalifatul. All rights reserved.</p>
       <p class="footer-sub">Visual Communication Designer · Bandung, Indonesia</p>
     </div>
   </footer>
@@ -555,7 +628,7 @@
     });
 
     // Cursor effects on hover
-    const links = document.querySelectorAll("a, button, .sk-card, .port-card, .cat-item");
+    const links = document.querySelectorAll("a, button, .sk-card, .port-card, .cat-item, .contact-card, .social-pill");
     links.forEach(link => {
       link.addEventListener("mouseenter", () => {
         cursorOutline.classList.add("cursor-hover");
@@ -566,6 +639,63 @@
         cursorDot.classList.remove("cursor-dot-hover");
       });
     });
+
+    // ===== CONTACT FORM — Formspree Handler =====
+    const contactForm = document.getElementById('contactForm');
+    const btnSend = document.getElementById('btnSend');
+    const btnText = btnSend?.querySelector('.btn-send-text');
+    const btnLoader = btnSend?.querySelector('.btn-send-loader');
+    const toastOK = document.getElementById('toastSuccess');
+    const toastERR = document.getElementById('toastError');
+
+    function showToast(el) {
+      el.style.display = 'flex';
+      // Auto-hide after 5s
+      setTimeout(() => { el.style.display = 'none'; }, 5000);
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Basic validation
+        const name = contactForm.name.value.trim();
+        const email = contactForm.email.value.trim();
+        const message = contactForm.message.value.trim();
+        if (!name || !email || !message) {
+          showToast(toastERR);
+          return;
+        }
+
+        // Loading state
+        btnSend.disabled = true;
+        btnText.style.display = 'none';
+        btnLoader.style.display = 'inline';
+        toastOK.style.display = 'none';
+        toastERR.style.display = 'none';
+
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            contactForm.reset();
+            showToast(toastOK);
+          } else {
+            showToast(toastERR);
+          }
+        } catch (err) {
+          showToast(toastERR);
+        } finally {
+          btnSend.disabled = false;
+          btnText.style.display = 'inline';
+          btnLoader.style.display = 'none';
+        }
+      });
+    }
   </script>
 </body>
 

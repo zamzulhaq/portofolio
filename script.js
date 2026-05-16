@@ -243,10 +243,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typingText) type();
 
-  /* ── Year in footer ── */
-  const footerYear = document.querySelector('.footer p');
-  if (footerYear) {
-    footerYear.textContent = footerYear.textContent.replace('2025', new Date().getFullYear());
-  }
-
 });
