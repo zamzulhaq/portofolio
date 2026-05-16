@@ -4,7 +4,7 @@
    ============================================ */
 
 /* ===== FONT LOADING (online = Google Fonts, offline = system fallback) ===== */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Unbounded:wght@700;800;900&display=swap');
 
 /* ===== CSS VARIABLES ===== */
 :root {
@@ -160,10 +160,11 @@ img {
 
 .section-header h2 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  text-transform: none; /* Reverting uppercase from Unbounded trial */
 }
 
 .section-header h2 em {
@@ -406,13 +407,7 @@ img {
   font-family: var(--font-mono);
 }
 
-/* ---- Hero Portrait ---- */
-.hero-image-wrap {
-  position: relative;
-  flex-shrink: 0;
-}
-
-/* Portrait styles removed per user request */
+/* Portrait styles removed */
 
 /* ===================================================
    ABOUT SECTION
@@ -445,7 +440,14 @@ img {
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: 6px 6px 0 #111;
-  transition: transform 0.3s ease;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.about-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 10px 10px 0 #1A6FFF;
+  border-color: #1A6FFF;
 }
 
 .about-card-header {
@@ -463,10 +465,11 @@ img {
 
 .about-card-content h2 {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 12px;
   color: #111;
+  text-transform: uppercase;
 }
 
 .about-card-content .blue-highlight {
@@ -513,6 +516,12 @@ img {
   line-height: 1.6;
   box-shadow: 6px 6px 0 #111;
   text-align: left;
+  transition: var(--transition);
+}
+
+.about-quote-box:hover blockquote {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 #1A6FFF;
 }
 
 /* Stats */
@@ -557,8 +566,8 @@ img {
 
 .skill-card:hover {
   border-color: #1A6FFF;
-  transform: translate(-3px, -3px);
-  box-shadow: 6px 6px 0 #111;
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 #1A6FFF;
 }
 
 .skill-card:active {
@@ -809,8 +818,8 @@ img {
    SOFTWARE SKILLS — DONUT + LIST LAYOUT
    =================================================== */
 .skills-section {
-  padding: 100px 0;
-  background: #acc8ff;
+  padding: 120px 0;
+  background: #F8FAFF; /* Cleaner, lighter blue-ish white */
   border-top: 3px solid #111;
   border-bottom: 3px solid #111;
   position: relative;
@@ -877,7 +886,7 @@ img {
 
 .donut-track {
   fill: none;
-  stroke: rgba(255, 255, 255, 0.15);
+  stroke: rgba(0, 0, 0, 0.05);
   stroke-width: 18;
 }
 
@@ -898,23 +907,23 @@ img {
 }
 
 .donut-pct {
-  fill: #fff;
+  fill: #111;
   font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 800;
+  font-size: 2.8rem;
+  font-weight: 900;
   text-anchor: middle;
   dominant-baseline: middle;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
 }
 
 .donut-label {
-  fill: rgba(255,255,255,0.65);
+  fill: #555;
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   text-anchor: middle;
   dominant-baseline: middle;
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -1129,8 +1138,8 @@ img {
 
 .portfolio-layout {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 60px;
+  grid-template-columns: 200px 1fr; /* Reduced from 220px */
+  gap: 40px; /* Reduced from 60px */
   margin-bottom: 80px;
 }
 
@@ -1205,8 +1214,9 @@ img {
 
 /* Portfolio grid - Flexible Flex Layout */
 .portfolio-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, 1fr)); /* Use 1fr to be flexible */
+  max-width: 1000px; /* Limit total width */
   gap: 20px;
   justify-content: flex-start;
   align-items: flex-start;
@@ -1215,21 +1225,34 @@ img {
 
 @media (max-width: 1200px) {
   .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
   }
 }
 
+@media (max-width: 768px) {
+  .portfolio-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
 .port-card {
-  flex: 0 1 350px;
-  height: 480px;
+  width: 100%; /* Fill the grid column */
+  max-width: 330px; /* Maximum size close to user preference */
+  height: 450px; /* Adjusted height for aspect ratio */
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: 12px;
   overflow: hidden;
-  background: var(--clr-surface);
-  border: 2.5px solid #111;
+  background: #fff;
+  border: 3px solid #111;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 4px 4px 0 #111;
+  box-shadow: 6px 6px 0 #111;
 }
 
 .port-card:hover .port-img {
@@ -1756,7 +1779,7 @@ img {
 .sp-icon {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--clr-accent);
+  color: currentColor; /* Matches the text color (blue when idle, white when hovered) */
 }
 
 /* ── RIGHT COLUMN: Form Card ── */
@@ -2042,10 +2065,7 @@ img {
     justify-content: center;
   }
 
-  .hero-portrait {
-    width: 200px;
-    height: 260px;
-  }
+/* Portrait code removed */
 
   .container {
     padding: 0 20px;
@@ -2055,14 +2075,7 @@ img {
     padding: 80px 0;
   }
 
-  .portfolio-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 160px);
-  }
-
-  .port-card.tall {
-    grid-row: span 1;
-  }
+/* Old portfolio grid logic removed */
 
   .logos-section {
     flex-wrap: wrap;
@@ -2088,10 +2101,7 @@ img {
       font-size: 3rem;
     }
 
-    .portfolio-grid {
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, 180px);
-    }
+/* Old portfolio grid logic removed */
 
     .freelance-grid {
       grid-template-columns: repeat(2, 1fr);
