@@ -3,8 +3,6 @@
 
 <!--COPYRIGHT AZZAM KHALIFATULHAQ 2026-->
 
-
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +15,11 @@
   <meta property="og:title" content="Portofolio – AZZAM KHALIFATULHAQ" />
   <meta property="og:description" content="Visual Communication Designer & Developer based in Bandung Barat." />
   <meta property="og:image" content="./{assets/foto1.png" />
+
+  <!-- Google Fonts — Batik Mode Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
   <!-- Lenis Smooth Scroll CDN -->
@@ -31,9 +34,12 @@
 
   <!-- ===== HERO SECTION ===== -->
   <section class="hero" id="home">
+    <!-- Gold top accent line -->
+    <div class="hero-top-line"></div>
+
     <!-- Floating nav pills -->
     <nav class="hero-nav">
-      <div class="nav-badge open">✦ Portofolio 17/05/2026</div>
+      <div class="nav-badge open">✦ Portofolio 17 mei 2026</div>
       <div class="nav-links">
         <a href="#home" class="nav-link active">Home</a>
         <a href="#summary" class="nav-link">About</a>
@@ -48,18 +54,28 @@
     <!-- Hero content -->
     <div class="hero-content">
       <div class="hero-text">
-        <span class="hero-role" style="font-size: clamp(0.6rem, 3vw, 0.8rem); padding: 8px 16px;">Visual Communication
-          Designer</span>
+        <span class="hero-role">Visual Communication Designer</span>
         <h1 class="hero-name">
           It's my<br /><span id="typing-text">Portofolio</span><span class="typing-cursor">|</span>
         </h1>
         <div class="hero-meta">
           <span class="meta-item">✉ azzamkhalifatulhaq@gmail.com</span>
           <span class="meta-item">🔗 linkedin.com/in/azzam-khalifatulhaq</span>
-          <span class="meta-item">📍 Bandung Barat,Indonesia</span>
+          <span class="meta-item">📍 Bandung Barat, Indonesia</span>
         </div>
       </div>
     </div>
+
+    <!-- Batik Kawung SVG Ornament — bottom right -->
+    <svg class="hero-ornament" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="60" cy="10" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
+      <circle cx="110" cy="60" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
+      <circle cx="60" cy="110" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
+      <circle cx="10" cy="60" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
+      <circle cx="60" cy="60" r="18" fill="none" stroke="#C9A96E" stroke-width="0.7" opacity="0.5"/>
+      <circle cx="60" cy="60" r="34" fill="none" stroke="#C9A96E" stroke-width="0.4" opacity="0.3"/>
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#C9A96E" stroke-width="0.3" opacity="0.15"/>
+    </svg>
   </section>
 
   <!-- ===== ABOUT SECTION ===== -->
@@ -100,8 +116,7 @@
 
           <div class="about-quote-box">
             <blockquote>
-              <em>"Kesuksesan itu di bukan dapatkan dari Kemampuan,
-                tapi dengan Kemauan."</em>
+              <em>"Berubah itu bukan tentang kemampuan, tapi kemauan"</em>
             </blockquote>
           </div>
         </div>
@@ -148,8 +163,12 @@
       </div>
 
     </div>
-    </div>
   </section>
+
+  <!-- Batik Geometric Divider -->
+  <div style="background: var(--clr-bg); padding: 0 40px;">
+    <div class="batik-divider"></div>
+  </div>
 
   <!-- ===== PROFESSIONAL JOURNEY SECTION ===== -->
   <section class="journey" id="journey">
@@ -249,63 +268,62 @@
 
         <!-- RIGHT: Skill Cards List -->
         <div class="skills-list-side">
-          <!-- Each card: data-pct = kemampuan, data-color = warna ring -->
-          <div class="sk-card active" data-pct="90" data-label="Canva" data-color="#1A6FFF">
+          <div class="sk-card active" data-pct="90" data-label="Canva" data-color="#C9A96E">
             <div class="sk-badge">Cv</div>
             <div class="sk-info">
               <span class="sk-name">Canva</span>
               <span class="sk-role">Social Media · Poster </span>
             </div>
             <div class="sk-bar-wrap">
-              <div class="sk-bar" style="--pct: 90%; --bar-color: #1A6FFF;"></div>
+              <div class="sk-bar" style="--pct: 90%; --bar-color: #C9A96E;"></div>
               <span class="sk-pct-text">90%</span>
             </div>
           </div>
 
-          <div class="sk-card" data-pct="75" data-label="Illustrator" data-color="#0A55E8">
+          <div class="sk-card" data-pct="75" data-label="Illustrator" data-color="#C4735A">
             <div class="sk-badge sk-ai">Ai</div>
             <div class="sk-info">
               <span class="sk-name">Adobe Illustrator</span>
               <span class="sk-role">Vector · Logo · Branding</span>
             </div>
             <div class="sk-bar-wrap">
-              <div class="sk-bar" style="--pct: 75%; --bar-color: #0A55E8;"></div>
+              <div class="sk-bar" style="--pct: 75%; --bar-color: #C4735A;"></div>
               <span class="sk-pct-text">75%</span>
             </div>
           </div>
 
-          <div class="sk-card" data-pct="47" data-label="After Effects" data-color="#5B9FFF">
+          <div class="sk-card" data-pct="47" data-label="After Effects" data-color="#E8A87C">
             <div class="sk-badge sk-ae">Ae</div>
             <div class="sk-info">
               <span class="sk-name">After Effects</span>
               <span class="sk-role">3D · Motion · Visual FX</span>
             </div>
             <div class="sk-bar-wrap">
-              <div class="sk-bar" style="--pct: 47%; --bar-color: #5B9FFF;"></div>
+              <div class="sk-bar" style="--pct: 47%; --bar-color: #E8A87C;"></div>
               <span class="sk-pct-text">47%</span>
             </div>
           </div>
 
-          <div class="sk-card" data-pct="65" data-label="Figma" data-color="#3b5fff">
+          <div class="sk-card" data-pct="65" data-label="Figma" data-color="#E8D4AC">
             <div class="sk-badge sk-fg">Fg</div>
             <div class="sk-info">
               <span class="sk-name">Figma</span>
               <span class="sk-role">UI · Wireframe · Prototype</span>
             </div>
             <div class="sk-bar-wrap">
-              <div class="sk-bar" style="--pct: 65%; --bar-color: #3b5fff;"></div>
+              <div class="sk-bar" style="--pct: 65%; --bar-color: #E8D4AC;"></div>
               <span class="sk-pct-text">65%</span>
             </div>
           </div>
 
-          <div class="sk-card" data-pct="80" data-label="CapCut" data-color="#0A55E8">
+          <div class="sk-card" data-pct="80" data-label="CapCut" data-color="#A8C5E8">
             <div class="sk-badge sk-cc">Cc</div>
             <div class="sk-info">
               <span class="sk-name">CapCut</span>
               <span class="sk-role">Video Edit · Reels · Trending</span>
             </div>
             <div class="sk-bar-wrap">
-              <div class="sk-bar" style="--pct: 80%; --bar-color: #0A55E8;"></div>
+              <div class="sk-bar" style="--pct: 80%; --bar-color: #A8C5E8;"></div>
               <span class="sk-pct-text">80%</span>
             </div>
           </div>
@@ -381,7 +399,6 @@
             </div>
           </div>
 
-
           <!-- Banner PRODUK DESAIN -->
           <div class="port-card" data-category="banner" style="display: none;">
             <img src="./{assets/BAKSO porto.png" alt="Banner 1" class="port-img">
@@ -434,7 +451,7 @@
           </div>
 
           <div class="port-card" data-category="sport" style="display: none;">
-            <img src="./{assets/http127.0.0.15000 (1).png" alt="Sport 1" class="port-img">
+            <img src="./{assets/http127.0.0.15000 (1).png" alt="Sport 2" class="port-img">
             <div class="port-overlay">
               <div class="port-info">
                 <span class="port-cat">UI Design</span>
@@ -455,9 +472,13 @@
           </div>
         </div>
 
-
       </div>
   </section>
+
+  <!-- Batik Geometric Divider -->
+  <div style="background: var(--clr-bg); padding: 0 40px;">
+    <div class="batik-divider"></div>
+  </div>
 
   <!-- ===== CONTACT SECTION ===== -->
   <section class="contact" id="contact">
@@ -479,7 +500,6 @@
               <span class="form-card-label">Send Message</span>
             </div>
 
-            <!-- ✅ Ganti YOUR_FORM_ID dengan ID dari formspree.io/new -->
             <form id="contactForm" action="https://formspree.io/f/xbdwzanb" method="POST" novalidate>
               <div class="form-group">
                 <label for="contactName">Your Name Compunity<span class="req">*</span></label>
@@ -509,7 +529,7 @@
                 <label for="contactMessage">Message <span class="req">*</span></label>
                 <div class="input-wrap textarea-wrap">
                   <textarea id="contactMessage" name="message" rows="5"
-                    placeholder="Hi Azzam, I'd like to talk about..." required></textarea>
+                    placeholder="Hai Azzam, aku ingin berbicara..." required></textarea>
                 </div>
               </div>
 
@@ -523,7 +543,7 @@
             <div class="form-toast success" id="toastSuccess">
               <span>🎉</span>
               <div>
-                <strong>Message sent!</strong>
+                <strong>Pesan terkirim!</strong>
                 <p>Thanks, I'll get back to you soon.</p>
               </div>
             </div>
@@ -571,7 +591,7 @@
               <span class="sp-icon">in</span>
               <span>LinkedIn</span>
             </a>
-            <a href="https://twitter.com/khalifatul" target="_blank" class="social-pill">
+            <a href="https://x.com/kholifatul36245" target="_blank" class="social-pill">
               <span class="sp-icon">✕</span>
               <span>Twitter</span>
             </a>
@@ -585,7 +605,7 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Azzam khalifatul. All rights reserved.</p>
+      <p>© 2026 Azzam Khalifatulhaq. All rights reserved.</p>
       <p class="footer-sub">Visual Communication Designer · Bandung, Indonesia</p>
     </div>
   </footer>
@@ -594,12 +614,12 @@
   <script>
     // Initialize Lenis for "Creamy" Smooth Scroll
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
-      mouseMultiplier: 1,
+      mouseMultiplier: 0.9,
       smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
@@ -628,11 +648,9 @@
       const posX = e.clientX;
       const posY = e.clientY;
 
-      // Dot follows immediately
       cursorDot.style.left = `${posX}px`;
       cursorDot.style.top = `${posY}px`;
 
-      // Outline follows with a slight smooth delay (using animate for performance)
       cursorOutline.animate({
         left: `${posX}px`,
         top: `${posY}px`
@@ -662,7 +680,6 @@
 
     function showToast(el) {
       el.style.display = 'flex';
-      // Auto-hide after 5s
       setTimeout(() => { el.style.display = 'none'; }, 5000);
     }
 
@@ -670,7 +687,6 @@
       contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Basic validation
         const name = contactForm.name.value.trim();
         const email = contactForm.email.value.trim();
         const message = contactForm.message.value.trim();
@@ -679,7 +695,6 @@
           return;
         }
 
-        // Loading state
         btnSend.disabled = true;
         btnText.style.display = 'none';
         btnLoader.style.display = 'inline';
