@@ -97,50 +97,35 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Portfolio category filter ── */
   const catItems = document.querySelectorAll('.cat-item');
   const portCards = document.querySelectorAll('.port-card');
-  let currentIdx = Array.from(catItems).findIndex(c => c.classList.contains('active'));
 
   const filterPortfolio = (category) => {
     portCards.forEach(card => {
-      if (card.getAttribute('data-category') === category) {
-        card.style.display = ''; // Show
+      // The see-more card should always remain active and unfaded
+      if (card.classList.contains('see-more-card')) {
+        card.classList.remove('faded');
+        return;
+      }
+
+      if (category === 'all') {
+        card.classList.remove('faded');
       } else {
-        card.style.display = 'none'; // Hide
+        if (card.getAttribute('data-category') === category) {
+          card.classList.remove('faded');
+        } else {
+          card.classList.add('faded');
+        }
       }
     });
   };
 
-  catItems.forEach((item, index) => {
+  catItems.forEach((item) => {
     item.addEventListener('click', () => {
       const category = item.getAttribute('data-category');
       catItems.forEach(c => c.classList.remove('active'));
       item.classList.add('active');
-      currentIdx = index; // Update sync
       filterPortfolio(category);
     });
   });
-
-  /* ── Prev / Next category arrows ── */
-  const prevBtn = document.getElementById('prevCat');
-  const nextBtn = document.getElementById('nextCat');
-
-  if (prevBtn && nextBtn) {
-    const setActive = (idx) => {
-      catItems.forEach(c => c.classList.remove('active'));
-      catItems[idx].classList.add('active');
-      const category = catItems[idx].getAttribute('data-category');
-      filterPortfolio(category);
-    };
-
-    prevBtn.addEventListener('click', () => {
-      currentIdx = (currentIdx - 1 + catItems.length) % catItems.length;
-      setActive(currentIdx);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentIdx = (currentIdx + 1) % catItems.length;
-      setActive(currentIdx);
-    });
-  }
 
   /* ── Smooth hover tilt on portfolio cards ── */
 
