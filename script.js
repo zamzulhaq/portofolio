@@ -52,7 +52,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 450);
   }
 
-  /* ── Nav highlight & sticky nav handled in inline script ── */
+<<<<<<< HEAD
+  /* ── Nav highlight & sticky nav handled in inline script via lenis.on('scroll') ── */
+=======
+  /* ── Active nav link on scroll ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const highlightNav = () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      if (window.scrollY >= top) current = section.id;
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', highlightNav, { passive: true });
+>>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
 
   /* ── Scroll fade-in observer ── */
   const fadeEls = document.querySelectorAll(
@@ -163,7 +185,21 @@ document.addEventListener('DOMContentLoaded', () => {
     glow.style.top = e.clientY + 'px';
   });
 
+<<<<<<< HEAD
+=======
+  /* ── Sticky Nav Toggle ── */
+  const navLinksContainer = document.querySelector('.nav-links');
+  const stickyThreshold = 80;
 
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > stickyThreshold) {
+      navLinksContainer.classList.add('stuck');
+    } else {
+      navLinksContainer.classList.remove('stuck');
+    }
+  }, { passive: true });
+
+>>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
   /* ── Typing Animation ── */
   const typingText = document.getElementById('typing-text');
   const phrases = ['Portofolio', 'Designs', 'Creativity', 'Branding', 'Artwork'];
