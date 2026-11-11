@@ -21,10 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
-<<<<<<< HEAD
   <link rel="icon" type="image/png" href="./{assets/logo.png" />
-=======
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
   <link rel="stylesheet" href="style.css" />
   <!-- Lenis Smooth Scroll CDN -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -32,7 +29,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
   <!-- Welcome / Loading Overlay -->
   <div class="welcome-overlay" id="welcomeOverlay">
     <!-- Floating batik particles -->
@@ -78,8 +74,6 @@
     </div>
   </div>
 
-=======
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
   <!-- Custom Cursor Elements -->
   <div class="cursor-dot"></div>
   <div class="cursor-outline"></div>
@@ -118,19 +112,6 @@
       </div>
     </div>
 
-<<<<<<< HEAD
-=======
-    <!-- Batik Kawung SVG Ornament — bottom right -->
-    <svg class="hero-ornament" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="60" cy="10" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
-      <circle cx="110" cy="60" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
-      <circle cx="60" cy="110" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
-      <circle cx="10" cy="60" r="18" fill="none" stroke="#C9A96E" stroke-width="1"/>
-      <circle cx="60" cy="60" r="18" fill="none" stroke="#C9A96E" stroke-width="0.7" opacity="0.5"/>
-      <circle cx="60" cy="60" r="34" fill="none" stroke="#C9A96E" stroke-width="0.4" opacity="0.3"/>
-      <circle cx="60" cy="60" r="50" fill="none" stroke="#C9A96E" stroke-width="0.3" opacity="0.15"/>
-    </svg>
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
   </section>
 
   <!-- ===== ABOUT SECTION ===== -->
@@ -781,11 +762,7 @@
   <script src="script.js"></script>
   <script>
     // Initialize Lenis for "Creamy" Smooth Scroll
-<<<<<<< HEAD
     const lenis = window.lenis = new Lenis({
-=======
-    const lenis = new Lenis({
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
       duration: 1.4,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
@@ -804,7 +781,6 @@
 
     requestAnimationFrame(raf)
 
-<<<<<<< HEAD
     // ── Nav highlight & sticky nav toggle ──
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -847,9 +823,6 @@
         welcomeOverlay.style.display = 'none';
       }, 800);
     }, 3000);
-
-=======
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
     // Sync Lenis with internal links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -858,11 +831,6 @@
       });
     });
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
     // --- Custom Cursor Logic ---
     const cursorDot = document.querySelector(".cursor-dot");
     const cursorOutline = document.querySelector(".cursor-outline");

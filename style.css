@@ -336,23 +336,11 @@ img {
 }
 
 .nav-links.stuck {
-<<<<<<< HEAD
-  position: relative;
-=======
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
   z-index: 1000;
   background: rgba(255, 252, 246, 0.96);
   border-color: rgba(201, 169, 110, 0.3);
   box-shadow: var(--shadow-md), 0 0 0 1px rgba(201, 169, 110, 0.15);
   backdrop-filter: blur(20px);
-<<<<<<< HEAD
-=======
-  animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
 }
 
 .nav-links.stuck .nav-link {
@@ -365,7 +353,6 @@ img {
   color: #fff;
 }
 
-<<<<<<< HEAD
 /* ── Sticky Nav (appears from top on scroll) ── */
 .sticky-nav {
   position: fixed;
@@ -401,11 +388,6 @@ img {
 .sticky-nav .nav-link.active {
   background: var(--clr-navy);
   color: #fff;
-=======
-@keyframes slideDown {
-  from { top: -100px; opacity: 0; transform: translateX(-50%); }
-  to   { top: 20px;   opacity: 1; transform: translateX(-50%); }
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
 }
 
 .nav-link {
@@ -532,21 +514,6 @@ img {
   letter-spacing: 0.01em;
 }
 
-<<<<<<< HEAD
-=======
-/* Decorative batik corner ornament in hero */
-.hero-ornament {
-  position: absolute;
-  bottom: 40px;
-  right: 52px;
-  width: 120px;
-  height: 120px;
-  opacity: 0.18;
-  z-index: 3;
-  pointer-events: none;
-}
-
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
 /* ===================================================
    ABOUT SECTION
    =================================================== */
@@ -2368,7 +2335,6 @@ img {
 ::selection {
   background: rgba(201, 169, 110, 0.2);
   color: var(--clr-navy);
-<<<<<<< HEAD
 }
 
 /* ===================================================
@@ -2644,6 +2610,3 @@ img {
 .js-loaded.hero-reveal .hero-role      { transition-delay: 0.2s; }
 .js-loaded.hero-reveal .hero-name      { transition-delay: 0.35s; }
 .js-loaded.hero-reveal .hero-meta      { transition-delay: 0.5s; }
-=======
-}
->>>>>>> 7f7025692d11e3eb20dd3433571dc0b4acafd35a
