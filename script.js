@@ -164,39 +164,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  /* ── Typing Animation ── */
-  const typingText = document.getElementById('typing-text');
-  const phrases = ['Portofolio', 'Designs', 'Creativity', 'Branding', 'Artwork'];
-  let phraseIdx = 0;
-  let charIdx = 0;
-  let isDeleting = false;
-  let typeSpeed = 150;
-
-  const type = () => {
-    const currentPhrase = phrases[phraseIdx];
-
-    if (isDeleting) {
-      typingText.textContent = currentPhrase.substring(0, charIdx - 1);
-      charIdx--;
-      typeSpeed = 100;
-    } else {
-      typingText.textContent = currentPhrase.substring(0, charIdx + 1);
-      charIdx++;
-      typeSpeed = 200;
-    }
-
-    if (!isDeleting && charIdx === currentPhrase.length) {
-      isDeleting = true;
-      typeSpeed = 2000; // Pause at end
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      phraseIdx = (phraseIdx + 1) % phrases.length;
-      typeSpeed = 500; // Pause before next
-    }
-
-    setTimeout(type, typeSpeed);
-  };
-
-  if (typingText) type();
-
 });

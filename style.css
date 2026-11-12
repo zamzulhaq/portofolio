@@ -267,7 +267,7 @@ img {
   inset: 0;
   background-image: var(--pattern-kawung);
   background-size: 60px 60px;
-  opacity: 0.35;
+  opacity: 0.2;
   pointer-events: none;
   z-index: 1;
 }
@@ -278,9 +278,9 @@ img {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 70% at 15% 50%, rgba(201, 169, 110, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 85% 20%, rgba(196, 115, 90, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(28, 43, 74, 0.3) 0%, rgba(28, 43, 74, 0.85) 100%);
+    radial-gradient(ellipse 80% 70% at 15% 50%, rgba(201, 169, 110, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 85% 20%, rgba(196, 115, 90, 0.05) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(28, 43, 74, 0.25) 0%, rgba(28, 43, 74, 0.85) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -438,80 +438,168 @@ img {
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 60px 52px 100px;
+  justify-content: center;
+  padding: clamp(40px, 6vh, 64px) 52px clamp(56px, 8vh, 88px);
   position: relative;
   z-index: 5;
-  gap: 48px;
 }
 
 .hero-text {
-  max-width: 640px;
+  width: 100%;
+  max-width: 900px;
 }
 
-.hero-role {
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--clr-gold);
+  opacity: 0.55;
+}
+
+.hero-headline {
+  margin-top: clamp(20px, 3.2vh, 32px);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.8vw, 5rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--clr-ivory);
+}
+
+.hero-headline .hero-line {
+  display: block;
+}
+
+.hero-headline em {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--clr-gold);
+}
+
+.hero-foot {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(32px, 5vw, 64px);
+  margin-top: clamp(28px, 4.5vh, 48px);
+  padding-top: clamp(20px, 3vh, 28px);
+  border-top: 1px solid rgba(201, 169, 110, 0.18);
+}
+
+.hero-intro {
+  max-width: 420px;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: rgba(245, 240, 232, 0.65);
+}
+
+.hero-intro strong {
+  font-weight: 600;
+  color: var(--clr-ivory);
+}
+
+.hero-foot-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--clr-gold), var(--clr-gold-deep));
+  color: var(--clr-navy);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 24px rgba(201, 169, 110, 0.25);
+  transition: var(--transition);
+}
+
+.hero-cta span {
+  transition: transform 0.3s ease;
+}
+
+.hero-cta:hover {
+  background: linear-gradient(135deg, var(--clr-gold-light), var(--clr-gold));
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(201, 169, 110, 0.35);
+}
+
+.hero-cta:hover span {
+  transform: translate(2px, -2px);
+}
+
+.hero-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgba(245, 240, 232, 0.75);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+  text-decoration-color: rgba(201, 169, 110, 0.4);
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.hero-cta-secondary:hover {
+  color: var(--clr-gold-light);
+  text-decoration-color: var(--clr-gold);
+}
+
+.hero-location {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--clr-gold);
-  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-bottom: 24px;
-  padding: 8px 18px;
-  border: 1px solid rgba(201, 169, 110, 0.35);
-  border-radius: var(--radius-pill);
-  background: rgba(201, 169, 110, 0.1);
-  backdrop-filter: blur(8px);
+  color: rgba(245, 240, 232, 0.45);
 }
 
-.hero-role::before {
-  content: '✦';
-  font-size: 0.55rem;
-  opacity: 0.8;
+.hero-location-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--clr-gold);
 }
 
-.hero-name {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 7vw, 6.5rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.025em;
-  margin-bottom: 40px;
-  color: var(--clr-ivory);
-}
-
-#typing-text {
-  color: var(--clr-gold);
-  font-style: italic;
-}
-
-.typing-cursor {
-  color: var(--clr-gold);
-  font-weight: 300;
-  animation: blink 1s infinite;
-  margin-left: 2px;
-  opacity: 0.8;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
-.hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 28px;
-}
-
-.meta-item {
-  font-size: 0.8rem;
-  color: rgba(245, 240, 232, 0.55);
-  font-family: var(--font-body);
-  font-weight: 400;
-  letter-spacing: 0.01em;
+.hero-cta:focus-visible,
+.hero-cta-secondary:focus-visible {
+  outline: 2px solid var(--clr-gold-light);
+  outline-offset: 3px;
 }
 
 /* ===================================================
@@ -2191,15 +2279,29 @@ img {
   }
 
   .hero-content {
-    flex-direction: column;
-    padding: 40px 24px 80px;
-    text-align: center;
-    gap: 20px;
+    padding: 28px 24px 56px;
     width: 100%;
   }
 
-  .hero-meta {
-    justify-content: center;
+  .hero-headline {
+    font-size: clamp(2.3rem, 7.8vw, 3.4rem);
+    letter-spacing: -0.02em;
+  }
+
+  .hero-foot {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 28px;
+    margin-top: 32px;
+    padding-top: 22px;
+  }
+
+  .hero-foot-end {
+    align-items: flex-start;
+  }
+
+  .hero-intro {
+    max-width: 520px;
   }
 
   .container {
@@ -2223,9 +2325,34 @@ img {
 }
 
 @media (max-width: 480px) {
-  .hero-name {
-    font-size: clamp(2.2rem, 12vw, 3rem);
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .hero-eyebrow {
+    align-items: flex-start;
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    line-height: 1.6;
+  }
+
+  .hero-eyebrow::before {
+    margin-top: 0.7em;
+    flex-shrink: 0;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.6rem, 8.5vw, 2.6rem);
     line-height: 1.1;
+  }
+
+  .hero-actions {
+    gap: 16px;
+  }
+
+  .hero-cta {
+    padding: 13px 24px;
   }
 }
 
@@ -2574,9 +2701,9 @@ img {
    =================================================== */
 .js-loaded .hero-top-line,
 .js-loaded .hero-nav,
-.js-loaded .hero-role,
-.js-loaded .hero-name,
-.js-loaded .hero-meta {
+.js-loaded .hero-eyebrow,
+.js-loaded .hero-headline,
+.js-loaded .hero-foot {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
@@ -2592,9 +2719,9 @@ img {
 
 .js-loaded.hero-reveal .hero-top-line,
 .js-loaded.hero-reveal .hero-nav,
-.js-loaded.hero-reveal .hero-role,
-.js-loaded.hero-reveal .hero-name,
-.js-loaded.hero-reveal .hero-meta {
+.js-loaded.hero-reveal .hero-eyebrow,
+.js-loaded.hero-reveal .hero-headline,
+.js-loaded.hero-reveal .hero-foot {
   opacity: 1;
   transform: translateY(0);
 }
@@ -2606,7 +2733,7 @@ img {
 
 /* Staggered delays */
 .js-loaded.hero-reveal .hero-top-line { transition-delay: 0s; }
-.js-loaded.hero-reveal .hero-nav       { transition-delay: 0.1s; }
-.js-loaded.hero-reveal .hero-role      { transition-delay: 0.2s; }
-.js-loaded.hero-reveal .hero-name      { transition-delay: 0.35s; }
-.js-loaded.hero-reveal .hero-meta      { transition-delay: 0.5s; }
+.js-loaded.hero-reveal .hero-nav      { transition-delay: 0.1s; }
+.js-loaded.hero-reveal .hero-eyebrow  { transition-delay: 0.2s; }
+.js-loaded.hero-reveal .hero-headline { transition-delay: 0.35s; }
+.js-loaded.hero-reveal .hero-foot     { transition-delay: 0.5s; }
