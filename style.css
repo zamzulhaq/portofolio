@@ -2328,6 +2328,58 @@ body.portfolio-modal-open {
   color: var(--clr-gold-deep);
 }
 
+.cv-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.cv-btn--primary {
+  border: 1px solid var(--clr-navy);
+  background: var(--clr-navy);
+  color: #FFFFFF;
+}
+
+.cv-btn--primary:hover {
+  border-color: var(--clr-navy-2);
+  background: var(--clr-navy-2);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(28, 43, 74, 0.18);
+}
+
+.cv-btn--ghost {
+  border: 1px solid var(--clr-border-gold);
+  background: transparent;
+  color: var(--clr-navy);
+}
+
+.cv-btn--ghost:hover {
+  border-color: var(--clr-gold);
+  background: rgba(201, 169, 110, 0.1);
+  transform: translateY(-1px);
+}
+
 .ig-stats {
   display: flex;
   align-items: center;
