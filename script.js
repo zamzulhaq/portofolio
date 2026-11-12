@@ -7,51 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Mark body as JS-loaded so CSS animations activate safely
   document.body.classList.add('js-loaded');
 
-  /* ── DONUT CHART SKILL INTERACTION ── */
-  const CIRCUMFERENCE = 2 * Math.PI * 80; // r=80 → ~502.65
-
-  const donutRing = document.getElementById('donutRing');
-  const donutPct = document.getElementById('donutPct');
-  const donutLabel = document.getElementById('donutLabel');
-  const donutDisplay = document.querySelector('.donut-display');
-
-  function updateDonut(pct, label, color) {
-    const filled = (pct / 100) * CIRCUMFERENCE;
-    const gap = CIRCUMFERENCE - filled;
-    donutRing.style.stroke = color;
-    donutRing.setAttribute('stroke-dasharray', `${filled} ${gap}`);
-    donutPct.textContent = pct + '%';
-    donutLabel.textContent = label;
-    if (donutDisplay) {
-      donutDisplay.style.filter = `drop-shadow(0 0 40px ${color}55)`;
-    }
-  }
-
-  const skCards = document.querySelectorAll('.sk-card');
-  skCards.forEach(card => {
-    card.addEventListener('click', () => {
-      skCards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      updateDonut(
-        parseInt(card.dataset.pct),
-        card.dataset.label,
-        card.dataset.color
-      );
-    });
-  });
-
-  // Init donut on load
-  const firstActive = document.querySelector('.sk-card.active');
-  if (firstActive && donutRing) {
-    setTimeout(() => {
-      updateDonut(
-        parseInt(firstActive.dataset.pct),
-        firstActive.dataset.label,
-        firstActive.dataset.color
-      );
-    }, 450);
-  }
-
   /* ── Nav highlight & sticky nav handled in inline script ── */
 
   /* ── Scroll fade-in observer ── */

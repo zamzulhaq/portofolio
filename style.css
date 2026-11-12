@@ -157,7 +157,7 @@ body {
   background-color: var(--clr-gold);
 }
 
-a, button, .sk-card, .port-card, .cat-item {
+a, button, .port-card, .cat-item {
   cursor: none !important;
 }
 
@@ -1033,7 +1033,7 @@ img {
 }
 
 /* ===================================================
-   SOFTWARE SKILLS SECTION
+   MY TOOLKIT SECTION
    =================================================== */
 .skills-section {
   padding: 128px 0;
@@ -1082,262 +1082,170 @@ img {
   color: rgba(245, 240, 232, 0.55);
 }
 
-/* ── Wrapper: left donut + right list ── */
-.skills-wrapper {
-  display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 72px;
+/* ── Toolkit header ── */
+.toolkit-header {
+  margin-bottom: 56px;
+}
+
+.toolkit-eyebrow {
+  display: inline-flex;
   align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+}
+
+.toolkit-eyebrow::before,
+.toolkit-eyebrow::after {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+
+/* ── Toolkit grid ── */
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
   position: relative;
   z-index: 1;
 }
 
-/* ── LEFT: Donut side ── */
-.skills-donut-side {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.donut-display {
-  width: 240px;
-  height: 240px;
-  position: relative;
-  filter: drop-shadow(0 0 40px rgba(201, 169, 110, 0.2));
-  transition: filter 0.4s ease;
-}
-
-.donut-svg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-  overflow: visible;
-}
-
-.donut-track {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.07);
-  stroke-width: 16;
-}
-
-.donut-ring {
-  fill: none;
-  stroke: var(--clr-gold);
-  stroke-width: 16;
-  stroke-linecap: round;
-  transition: stroke-dasharray 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-              stroke 0.4s ease;
-}
-
-.donut-pct,
-.donut-label {
-  transform-origin: center;
-  transform: rotate(90deg);
-}
-
-.donut-pct {
-  fill: var(--clr-ivory);
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-weight: 700;
-  text-anchor: middle;
-  dominant-baseline: middle;
-  letter-spacing: -0.03em;
-}
-
-.donut-label {
-  fill: rgba(245, 240, 232, 0.5);
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  text-anchor: middle;
-  dominant-baseline: middle;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.donut-hint {
-  font-size: 0.72rem;
-  color: rgba(245, 240, 232, 0.35);
-  font-family: var(--font-body);
-  text-align: center;
-  letter-spacing: 0.04em;
-}
-
-/* ── RIGHT: Skill cards list ── */
-.skills-list-side {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.sk-card {
-  display: grid;
-  grid-template-columns: 52px 1fr auto;
-  align-items: center;
-  gap: 18px;
-  padding: 16px 22px;
+.tool-card {
+  padding: 28px 30px 24px;
+  border: 1px solid rgba(201, 169, 110, 0.18);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 252, 246, 0.08);
-  background: rgba(255, 252, 246, 0.04);
-  cursor: pointer;
-  transition: border-color 0.3s ease, background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  background: rgba(255, 252, 246, 0.025);
+  transition: border-color 0.3s ease, background 0.3s ease;
 }
 
-.sk-card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  border-radius: 3px 0 0 3px;
-  background: transparent;
-  transition: background 0.3s ease;
+.tool-card:hover {
+  border-color: rgba(201, 169, 110, 0.32);
+  background: rgba(255, 252, 246, 0.035);
 }
 
-.sk-card.active::before {
-  background: linear-gradient(to bottom, var(--clr-gold), var(--clr-terracotta));
-}
-
-.sk-card:hover {
-  background: rgba(255, 252, 246, 0.07);
-  transform: translateX(4px);
-  border-color: rgba(201, 169, 110, 0.25);
-}
-
-.sk-card.active {
-  border-color: rgba(201, 169, 110, 0.3);
-  background: rgba(201, 169, 110, 0.07);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-}
-
-/* Badge */
-.sk-badge {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(201, 169, 110, 0.3);
-  display: flex;
+.tool-card-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-body);
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--clr-gold);
-  background: rgba(201, 169, 110, 0.12);
-  flex-shrink: 0;
-  transition: background 0.3s ease, border-color 0.3s ease;
-  letter-spacing: 0.03em;
+  gap: 14px;
 }
 
-.sk-card.active .sk-badge,
-.sk-card:hover .sk-badge {
-  background: rgba(201, 169, 110, 0.2);
-  border-color: rgba(201, 169, 110, 0.5);
-  color: var(--clr-gold-light);
-}
-
-.sk-ai { color: var(--clr-terracotta) !important; border-color: rgba(196, 115, 90, 0.3) !important; background: rgba(196, 115, 90, 0.1) !important; }
-.sk-ae { color: #E8A87C !important; border-color: rgba(232, 168, 124, 0.3) !important; background: rgba(232, 168, 124, 0.1) !important; }
-.sk-fg { color: var(--clr-gold-light) !important; border-color: rgba(232, 212, 172, 0.3) !important; background: rgba(232, 212, 172, 0.08) !important; }
-.sk-cc { color: #A8C5E8 !important; border-color: rgba(168, 197, 232, 0.3) !important; background: rgba(168, 197, 232, 0.08) !important; }
-
-.sk-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.sk-name {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--clr-ivory);
-  letter-spacing: -0.01em;
-}
-
-.sk-role {
-  font-size: 0.7rem;
-  color: rgba(245, 240, 232, 0.4);
-  font-family: var(--font-body);
-  letter-spacing: 0.02em;
-}
-
-.sk-bar-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 130px;
-}
-
-.sk-bar {
-  flex: 1;
-  height: 4px;
-  border-radius: 99px;
-  background: rgba(255, 255, 255, 0.08);
-  position: relative;
-  overflow: hidden;
-}
-
-.sk-bar::after {
-  content: '';
-  position: absolute;
-  inset-block: 0;
-  left: 0;
-  width: var(--pct);
-  border-radius: 99px;
-  background: linear-gradient(90deg, var(--clr-gold), var(--bar-color, var(--clr-terracotta)));
-  transition: width 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.sk-pct-text {
+.tool-card-num {
   font-family: var(--font-body);
   font-size: 0.68rem;
-  color: rgba(245, 240, 232, 0.4);
-  min-width: 30px;
-  text-align: right;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--clr-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.tool-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--clr-ivory);
+}
+
+.tool-card-icon {
+  display: flex;
+  color: var(--clr-gold);
+  opacity: 0.8;
+}
+
+.tool-card-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.tool-card-divider {
+  height: 1px;
+  margin: 16px 0 8px;
+  background: rgba(201, 169, 110, 0.16);
+}
+
+.tool-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 24px;
+}
+
+.tool-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+}
+
+.tool-logo {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.tool-name {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
   font-weight: 500;
+  letter-spacing: 0.005em;
+  color: rgba(245, 240, 232, 0.78);
 }
 
 @media (max-width: 900px) {
-  .skills-wrapper {
+  .tool-list {
     grid-template-columns: 1fr;
-    gap: 48px;
   }
 
-  .skills-donut-side {
-    flex-direction: row;
-    justify-content: center;
-    gap: 32px;
-    align-items: center;
+  .tool-card {
+    padding: 26px 26px 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 88px 0;
   }
 
-  .donut-display {
-    width: 180px;
-    height: 180px;
+  .toolkit-header {
+    margin-bottom: 40px;
+  }
+
+  .toolkit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-card {
+    padding: 24px 22px 20px;
   }
 }
 
 @media (max-width: 600px) {
-  .skills-donut-side {
-    flex-direction: column;
+  .tool-list {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-card-title {
+    font-size: 1.15rem;
   }
 
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .sk-card {
-    grid-template-columns: 44px 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  .sk-bar-wrap {
-    grid-column: 1 / -1;
-    min-width: unset;
   }
 }
 
